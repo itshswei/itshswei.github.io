@@ -7,4 +7,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://itshswei.github.io',
   integrations: [mdx(), sitemap(), tailwind()]
+  output: 'static'
 });
