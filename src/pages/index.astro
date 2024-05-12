@@ -1,0 +1,151 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+import createSlug from "../lib/createSlug"
+import TimeLineElement from "../components/cv/TimeLine.astro";
+
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const last_posts = posts.slice(0, 3);
+---
+
+<BaseLayout sideBarActiveItemID="home">
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">個人簡介</div>
+  </div>
+
+  <div class="mb-2 text-justify">
+    我是一位社會學式社會心理學（sociological social psychology）學徒，研究興趣包含性別、身體、情感、以及科技與社會，目前，我正在就讀清大社會所，碩士論文關心（新手）爸爸育兒生活中的情感實作（affective practice）。但除此之外，我也廣泛地關心其他社會議題，我最近正在思考如何促進男性心理健康的行動方案，以及考慮撰寫相關的部落格文章、成立相關的播客（Podcast）頻道。如果你也對此有興趣，歡迎與我聯繫。
+  </div>
+  <div class="time-line-container grid gap-1 mb-10">
+    <li><b>CONTACT ME</b>：hswei.ac@gmail.com</li>
+  </div>
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">教育經歷</div>
+  </div>
+
+  <div class="time-line-container grid gap-1 mb-10">
+    <TimeLineElement
+      title="2023- 國立清華大學社會學研究所"
+    />
+    <TimeLineElement
+    title="2018-2021 國立屏東大學教育心理與輔導學系"
+  />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">學術工作經歷</div>
+  </div>
+  <div class="text-xl mb-5 text-justify">
+    (一) 兼任研究助理
+  </div>
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="孕產照護的創新設計與改革－自然流產與安胎的照護邏輯：醫療實作與不同性別主體的詮釋(1/2)"
+      subtitle="施麗雯（計畫主持人）, 國科會, 2022.08.22－2022.10.31, Taipei Medical University, Taipei, Taiwan"
+    >
+  </TimeLineElement>
+    <TimeLineElement
+      title="隱默的聲音：台灣自然流產的醫學和社會形塑與主體經驗（重點代號：L03）(2/2)"
+      subtitle="施麗雯（計畫主持人）, 科技部, 2021.12.27－2022.01.27, Taipei Medical University, Taipei, Taiwan"
+    >
+  </TimeLineElement>
+    <TimeLineElement
+      title="韋伯研究再探:文本脈絡、知識效應、繼受過程"
+      subtitle="蔡博方（計畫主持人）, 科技部, 2021.09.01－2021.11.30, Taipei Medical University, Taipei, Taiwan"
+    >
+  </TimeLineElement>
+  <TimeLineElement
+  title="現實與虛擬海洋體驗對恐水意識與海洋素養之影響"
+  subtitle="韓德彥（共同主持人）, 科技部, 2021.09.01－2021.10.31, Taipei Medical University, Taipei, Taiwan"
+>
+</TimeLineElement>
+  </div>
+  <div class="text-xl mb-5 text-justify">
+    (二) 教學助理
+  </div>
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+    title="113-3 醫學專業素養三：同理心與社會關懷（主授：蔡博方）。學士後醫學系，國立清華大學。"
+    subtitle="配合「生成式AI融入人社課程計畫」，協助完成課堂指令之發想、測試與實作"
+  >
+  </TimeLineElement>
+    <TimeLineElement
+  title="112-1 台灣社會與文化專題（主授：呂玫鍰）。台灣研究教師在職進修碩士學位班，國立清華大學。"
+>
+</TimeLineElement>
+  <TimeLineElement
+  title="111-1 普通社會學（主授：施麗雯）。高齡健康暨⻑期照護學系，臺北醫學大學。"
+>
+</TimeLineElement>
+<TimeLineElement
+title="110-1 普通心理學（主授：韓德彥）。公共衛生學系，臺北醫學大學。"
+>
+</TimeLineElement>
+<TimeLineElement
+title="109-1 社會企業與公益創新（主授：陳馥瑋）。博雅教育中心，國立屏東大學。"
+>
+</TimeLineElement>
+<TimeLineElement
+title="108-1 社會企業與公益創新（主授：陳馥瑋）。博雅教育中心，國立屏東大學。"
+>
+</TimeLineElement>
+  </div>
+  <div class="text-xl mb-5 text-justify">
+    (三) 其他助理經驗
+  </div>
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+    title="研究生獎助學金，國立清華大學社會學研究所"
+    subtitle="所長助理, 2023.09.11-2024.01.12 ＆ 2024.02.19-2024.06.20"
+      >
+    </TimeLineElement>
+  <TimeLineElement
+  title="屏東縣農村產業暨社會變遷調查計畫（陳馥瑋，共同主持人），國立屏東大學社會發展學系。"
+    >
+  </TimeLineElement>
+  <TimeLineElement
+  title="搖滾社會力：在地關懷為導向的社會企業與公益實踐培力計畫，國立屏東大學社會發展學系。"
+  subtitle="行政工讀生, 2020.01-2021.06"  
+  >
+  </TimeLineElement>
+  <TimeLineElement
+  title="搖滾社會力：在地關懷為導向的社會企業與公益創新計畫，國立屏東大學社會發展學系。"
+  subtitle="行政工讀生, 2019.08-2019.12.31"  
+  >
+  </TimeLineElement>
+</div>
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">發表出版</div>
+  </div>
+  <div class="text-xl mb-5 text-justify">
+    (一) 會議論文
+  </div>
+  <div class="time-line-container grid gap-2 mb-10">
+    <li>2021，〈生態女性主義的召喚？媽媽公⺠的性別與環境意識〉。論文發表於「2021台灣女性學學會『亞洲、性別、非人權』年度研討會」，臺北，國立臺灣大學社會科學院（疫情改為線上會議）。</li>
+    <li>2020，〈哪裡不平等？校園防疫治理下的「他者」〉(海報發表)。論文發表於「第十一屆『醫學與社會』理論暨實務研討會」，臺中：中山醫學大學。</li>
+    <li>2019，〈你說你在蹲什麼？學生田野經驗之我見〉(學生論壇)。發表於「第十五屆南台灣社會發展學術研討會」，屏東市：國立屏東大學社會發展學系。</li>
+  </div>
+  <div class="text-xl mb-5 text-justify">
+    (二) 其他
+  </div>
+  <div class="time-line-container grid gap-2 mb-10">
+  <li>2020，《「再見」美好東片村？：社區環境運動紀錄手冊》。<a href="https://issuu.com/hswei.ac/docs/dung-pain_book" target="_blank">[線上閱讀]</a></li>
+</div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">榮譽與獎助</div>
+  </div>
+  <div class="time-line-container grid gap-2 mb-10">
+    <li>2020，大專學生研究計畫，科技部。</li>
+    走一條參政新路？：生態女性主義充權女性參政的概念初探(109-2813-C-153-036-H)，指導教授：吳品賢。
+    <li>———，學業成績優良祝福金，臺北市動產質借處。</li>
+    <li>2019，學業成績優良祝福金，臺北市動產質借處。</li>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-xl w-full">Latest updated: 2024.05.12</div>
+  </div>
+</BaseLayout>
